@@ -1,0 +1,13 @@
+FROM python:3.12.6
+
+WORKDIR /app
+
+COPY . /app
+
+RUN pip install --upgrade pip \
+ && pip install --no-cache-dir -r requirements.txt
+
+   نصب پکیج‌های سنگین ثابت به صورت جدا
+RUN pip install tensorflow==2.17.0
+
+CMD ["python"]
